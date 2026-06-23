@@ -1,0 +1,40 @@
+Cloudinary ---> Third party platform to host images on cloud and gives a unique url and then attach/save that link in database
+its same as storage feature in supabase
+it has multiple features that we can apply to image like size , background , etc
+we use this to host image and get url as we cant directly store image in database we store the link that's y we use cloudinary as third party platform
+in supabase we also host image through storage feature and save url in table
+npm install cloudinary
+
+Multer ---> Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files.
+it is used to read files like image , video , audio , etc in backend as backend can only read json format
+means multer sirf multipart data ko read kary ga
+it can store data in two ways:
+1.disk storage --- means backend mein folder banao pic pehly wahah store hogi phir database mein 
+2.memory storage --- means image ya any file ko buffer (numbers letters) mein read kary ga or phir cloudinary mein save kary ga , it use CPU
+
+To check the blog api go to postman -- body -- form-data and write key as the same name you write in schema like title , text and then write value and for image same but select file not text  and in value add the path or select file from computer and then add content key , text and its value
+
+upload.single is a function of multer to upload image , multer is middleware q ky ye frontend sy image la kar backend mein connect karta hy
+
+req.file gives the following things:
+req.file---> {
+  fieldname: 'image',
+  originalname: 'wall.jpg',
+  encoding: '7bit',
+  mimetype: 'image/jpeg',
+  buffer: <Buffer ff d8 ff e0 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ff db 00 84 00 09 06 07 0d 0d 0f 10 0d 0d 10 0e 0e 0d 10 0e 0e 10 10 0f 10 0d 10 0f 10 10 ... 2811 more bytes>,
+  size: 2861
+}
+
+cloudinary mein image directly upload nahi hoti buffer form mein hoti hy
+cloudinary setup :
+sign up
+documentation --- nodejs --- npm install cloudinary
+dashboard --- cloud name --- copy it and then go to api key and copy api key and api secret
+in assests --- folders you can see your hosted images
+
+in env file save cloud name , api key , api secret
+
+
+
+Upload and delete picture in cloudinary and then save and delete in database , Cloudinary , Multer
