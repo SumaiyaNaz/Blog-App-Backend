@@ -20,10 +20,10 @@ connectDB()
 //Cors to allow cross origin to communicte forntend and backend
 //now its allow all origin means kisi bhi path sy chaly ga
 app.use(cors({
-  origin: ['http://localhost:5173','https://blog-app-frontend-two-zeta.vercel.app'],
+  origin: ['https://blog-app-frontend-two-zeta.vercel.app','http://localhost:5173','https://blog-app-frontend-two-zeta.vercel.app'],
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  methods: ['GET', 'POST', 'PUT', 'DELETE','OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization','Cookie']
 }));
 
 //Middleware to parse data
